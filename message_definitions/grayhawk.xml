@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<mavlink>
+  <!-- MAVLink standard messages -->
+  <include>common.xml</include>
+  <include>standard.xml</include>
+  <dialect>0</dialect>
+  <!-- use common.xml enums -->
+  <enums>
+    <enum name="GH_SWITCH_PORT_STATUS">
+      <description>Status of a network switch port on the GH carrier board</description>
+      <entry value="0" name="GH_SWITCH_PORT_STATUS_DOWN">
+        <description>Network switch port DOWN</description>
+      </entry>
+      <entry value="1" name="GH_SWITCH_PORT_STATUS_UP">
+        <description>Network switch port UP</description>
+      </entry>
+    </enum>
+  </enums>
+  <!-- use common.xml messages -->
+  <messages>
+    <message id="48000" name="GH_NETWORK_SWITCH_STATUS">
+      <description>Network switch status on GH carrier board</description>
+      <field type="uint8_t[6]" name="mac_address">Switch MAC address</field>
+      <field type="uint8_t" name="port1_status" enum="GH_SWITCH_PORT_STATUS">Port 1 status</field>
+      <field type="uint8_t" name="port2_status" enum="GH_SWITCH_PORT_STATUS">Port 2 status</field>
+      <field type="uint8_t" name="port3_status" enum="GH_SWITCH_PORT_STATUS">Port 3 status</field>
+      <field type="uint8_t" name="port4_status" enum="GH_SWITCH_PORT_STATUS">Port 4 status</field>
+      <field type="uint8_t" name="port5_status" enum="GH_SWITCH_PORT_STATUS">Port 5 status</field>
+      <field type="uint8_t" name="port6_status" enum="GH_SWITCH_PORT_STATUS">Port 6 status</field>
+      <field type="uint8_t" name="port7_status" enum="GH_SWITCH_PORT_STATUS">Port 7 status</field>
+    </message>
+  </messages>
+</mavlink>
